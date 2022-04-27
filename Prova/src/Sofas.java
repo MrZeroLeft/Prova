@@ -1,3 +1,5 @@
+import javax.swing.JOptionPane;
+
 public class Sofas {
    private int numeroLugares;
    private String cor;
@@ -11,17 +13,17 @@ public class Sofas {
     this.estrelas = estrelas;
     }
     
-    Sofas S1 = new Sofas(4, "cinza", 1699.00, 4);
-    Sofas S2 = new Sofas(4, "bege", 1449.00, 5);
-    Sofas S3 = new Sofas(2, "marrom", 1199.0, 4);
-    Sofas S4 = new Sofas(3, "preto", 542.79, 3);
+    public String mostrarSofas(Sofas nomeSofa) {
+        return mostrarSofas(nomeSofa);
+    }
 
-    public String mostrarSofas() {
-        System.out.format(
-            "S1 \nnumero de lugares: %d \ncor: %s \npreço: %d \nnumero de estrelas: %d \n\nS2 \nnumero de lugares: %d \ncor: %s \npreço: %d \nnumero de estrelas: %d \n\nS3 \nnumero de lugares: %d \ncor: %s \npreço: %d \nnumero de estrelas: %d \n\nS4 \nnumero de lugares: %d \ncor: %s \npreço: %d \nnumero de estrelas: %d",
-            S1.numeroLugares, S1.cor, S1.preco, S1.estrelas, S2.numeroLugares, S2.cor, S2.preco, S2.estrelas, S3.numeroLugares, S3.cor, S3.preco, S3.estrelas, S4.numeroLugares, S4.cor, S4.preco, S4.estrelas 
-        );
-        return mostrarSofas();
+    public void comprarSofa() {
+        String qualSofa = JOptionPane.showInputDialog(null, "Qual seu filme preferido?", "Sofas", JOptionPane.QUESTION_MESSAGE);
+        if(qualSofa != "S1" || qualSofa != "S2" || qualSofa != "S3" || qualSofa != "S4") {
+            JOptionPane.showMessageDialog(null, "Compra feita com sucesso", "sucesso", JOptionPane.DEFAULT_OPTION);
+        } else {
+            JOptionPane.showMessageDialog(null, "Sofa não encontrado", "erro", JOptionPane.DEFAULT_OPTION);
+        };
     }
 
     public int getNumeroLugares() {
